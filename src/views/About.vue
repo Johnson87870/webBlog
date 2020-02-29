@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>关于我博客与后台技术介绍</h1>
   </div>
 </template>
