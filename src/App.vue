@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Menus />
+    <Menus v-show="!(path === '/welcome')" />
     <div class="container">
       <router-view />
     </div>
@@ -10,6 +10,19 @@
 <script>
 import menus from "@/components/Menus";
 export default {
+  data() {
+    return {
+      path: ""
+    };
+  },
+  mounted() {
+    this.path = this.$route.path;
+  },
+  watch: {
+    $route(to, from) {
+      this.path = to.path;
+    }
+  },
   components: {
     Menus: menus
   }

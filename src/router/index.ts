@@ -3,13 +3,20 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Document from '@/views/Document.vue';
 import BlogList from '@/views/BlogList.vue';
+import Welcome from '@/components/Welcome.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/welcome',
+    name: 'Welcome',
+    component: Welcome
+  },
+  {
     path: '/',
     name: 'Home',
+    redirect: '/welcome',
     component: Home
   },
   {
