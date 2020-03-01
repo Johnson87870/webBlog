@@ -14,34 +14,42 @@
       </div>
     </div>
     <div class="menus-nav">
-      <div class="nav-item" @click="goToRoutePage('/')">
-        <span class="nav-icon"></span>
+      <a href="#" class="nav-item" @click="goToRoutePage('/')">
+        <span class="nav-icon">
+          <img src="../assets/icons/home.svg" alt />
+        </span>
         <span class="nav-text">
           首页
           <!-- <router-link to="/">首页</router-link> -->
         </span>
-      </div>
-      <div class="nav-item" @click="goToRoutePage('bloglist')">
-        <span class="nav-icon"></span>
+      </a>
+      <a href="#" class="nav-item" @click="goToRoutePage('bloglist')">
+        <span class="nav-icon">
+          <img src="../assets/icons/bloglist.svg" alt />
+        </span>
         <span class="nav-text">
           博客文章
           <!-- <router-link to="/bloglist">博客文章</router-link> -->
         </span>
-      </div>
-      <div class="nav-item" @click="goToRoutePage('document')">
-        <span class="nav-icon"></span>
+      </a>
+      <a href="#" class="nav-item" @click="goToRoutePage('document')">
+        <span class="nav-icon">
+          <img src="../assets/icons/document.svg" alt />
+        </span>
         <span class="nav-text">
           文档
           <!-- <router-link to="/document">文档</router-link> -->
         </span>
-      </div>
-      <div class="nav-item" @click="goToRoutePage('about')">
-        <span class="nav-icon"></span>
+      </a>
+      <a href="#" class="nav-item" @click="goToRoutePage('about')">
+        <span class="nav-icon">
+          <img src="../assets/icons/about.svg" alt />
+        </span>
         <span class="nav-text">
           关于
           <!-- <router-link to="/about">关于</router-link> -->
         </span>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -126,11 +134,19 @@ export default {
       border-bottom: 1px #ccc solid;
       display: flex;
       align-items: center;
+      text-decoration: none;
+      color: #342648;
       > .nav-icon {
         width: 40px;
         height: 40px;
         margin-left: 10px;
-        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > img {
+          height: 30px;
+          width: 40px;
+        }
       }
       > .nav-text {
         width: 50%;
@@ -140,6 +156,12 @@ export default {
     }
     > .nav-item:last-child {
       border: 0;
+    }
+    > .nav-item:hover {
+      color: #fff;
+    }
+    > .nav-item:active {
+      color: #fff;
     }
   }
 }
