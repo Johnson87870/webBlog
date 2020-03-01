@@ -38,6 +38,7 @@ export default {
   display: flex;
   > .container {
     padding-left: 20px;
+    padding-right: 20px;
   }
 }
 </style>

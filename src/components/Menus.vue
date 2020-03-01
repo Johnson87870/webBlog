@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="menus-nav">
-      <a href="#" class="nav-item" @click="goToRoutePage('/')">
+      <a href="#" class="nav-item" @click="goToRoutePage('home')">
         <span class="nav-icon">
           <img src="../assets/icons/home.svg" alt />
         </span>
@@ -63,6 +63,9 @@ export default {
     // 路由跳转
     goToRoutePage(type) {
       const routerType = type.indexOf("/") == -1 ? "/" + type : type;
+      if (this.$route.path === routerType) {
+        return;
+      }
       this.$router.push({ path: routerType });
     }
   }
