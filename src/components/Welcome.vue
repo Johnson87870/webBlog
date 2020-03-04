@@ -11,7 +11,12 @@
       </div>
     </div>
 
-    <button class="welcome-sign-in" @click="$router.push({ path: '/home' })">Enter my blog !</button>
+    <div class="welcome-sign-in">
+      <button class="welcome-sign-in-button" @click="$router.push({ path: '/home' })">
+        <span class="welcome-sign-start-btn">Start !</span>
+        <span class="welcome-sign-enter-btn">Enter my blog !</span>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -96,17 +101,119 @@ export default {
   > .welcome-sign-in {
     margin-top: 20px;
     width: 200px;
-    height: 50px;
-    border-radius: 40px;
-    font-size: 16px;
-    color: #342648;
-    font-weight: bold;
-    border: 0;
+    display: flex;
+    justify-content: center;
+    > .welcome-sign-in-button {
+      width: 60px;
+      height: 50px;
+      font-size: 16px;
+      border-radius: 40px;
+      background-color: #fff;
+      color: #342648;
+      font-weight: bold;
+      border: 0;
+      position: relative;
+      > span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      > .welcome-sign-start-btn {
+        opacity: 1;
+      }
+      > .welcome-sign-enter-btn {
+        opacity: 0;
+      }
+    }
   }
 
   > .welcome-sign-in:hover {
-    background-color: #0094ff;
-    color: #fff;
+    > .welcome-sign-in-button {
+      width: 200px;
+      height: 50px;
+      border-radius: 40px;
+      background-color: #0094ff;
+      transition-duration: 0.8s;
+      transition-timing-function: ease;
+
+      > span {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      > .welcome-sign-start-btn {
+        animation: text-out 0.4s ease;
+        -moz-animation: text-out 0.4s ease;
+        -webkit-animation: text-out 0.4s ease;
+        animation-fill-mode: both;
+      }
+      > .welcome-sign-enter-btn {
+        color: #fff;
+        animation: text-in 0.4s ease 0.15s;
+        -moz-animation: text-in 0.4s ease 0.15s;
+        -webkit-animation: text-in 0.4s ease 0.15s ease;
+        animation-fill-mode: both;
+      }
+    }
+  }
+}
+
+@keyframes text-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes text-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes text-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes text-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes text-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes text-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>
