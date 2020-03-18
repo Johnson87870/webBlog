@@ -1,9 +1,16 @@
 <template>
-  <div class="blog-list">blogListPage</div>
+  <div class="blog-list">
+    <list />
+  </div>
 </template>
 
 <script>
-export default {};
+import ListCom from "@/components/ListCom";
+export default {
+  components: {
+    list: ListCom
+  }
+};
 </script>
 
 <style lang="scss" scoped>

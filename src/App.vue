@@ -35,10 +35,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #f5f5f5;
   display: flex;
+  height: 100%;
   > .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 80%;
+    min-height: 100%;
+    background-color: #fff;
   }
 }
 </style>
